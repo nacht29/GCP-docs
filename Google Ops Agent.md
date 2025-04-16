@@ -82,8 +82,8 @@ sudo touch /var/log/scrip2.log
 **Set permissions**
 
 ```bash
-sudo chmod 777 /var/log/scrip1.logg
-sudo chmod 777 /var/log/scrip2.logg
+sudo chmod 777 /var/log/scrip1.log
+sudo chmod 777 /var/log/scrip2.log
 ```
 **Verify permissions**
 
