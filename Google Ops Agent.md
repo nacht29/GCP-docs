@@ -75,14 +75,14 @@ sudo systemctl restart google-cloud-ops-agent
 **Create log files**
 
 ```bash
-sudo touch /var/log/scrip1.log
+sudo touch /var/log/script1.log
 sudo touch /var/log/scrip2.log
 ```
 
 **Set permissions**
 
 ```bash
-sudo chmod 777 /var/log/scrip1.log
+sudo chmod 777 /var/log/script1.log
 sudo chmod 777 /var/log/scrip2.log
 ```
 **Verify permissions**
@@ -105,7 +105,7 @@ ls -la /var/log/*.log
 **Manually write test entries**
 
 ```bash
-echo "TEST LOG ENTRY - $(date)" | sudo tee -a /var/log/scrip1.log
+echo "TEST LOG ENTRY - $(date)" | sudo tee -a /var/log/script1.log
 ```
 
 **Check local log entries**
