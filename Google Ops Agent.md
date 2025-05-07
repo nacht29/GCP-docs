@@ -20,23 +20,23 @@ sudo vim /etc/google-cloud-ops-agent/config.yaml
 
 ```bash
 logging:
-  receivers:
-    # script 1 log
-    script1-logs:
-      type: files
-      include_paths:
-        - /var/log/script1.log
+	receivers:
+		# script 1 log
+		script1-logs:
+			type: files
+			include_paths:
+				- /var/log/script1.log
 
-    # script 2 log
-    script2-logs:
-      type: files
-      include_paths:
-        - /var/log/script2.log
+		# script 2 log
+		script2-logs:
+			type: files
+			include_paths:
+				- /var/log/script2.log
 
-  service:
-    pipelines:
-      default_pipeline:
-        receivers: [script1-logs, script2-logs]
+	service:
+		pipelines:
+			default_pipeline:
+				receivers: [script1-logs, script2-logs]
 ```
 
 or
@@ -44,23 +44,23 @@ or
 ```bash
 sudo tee /etc/google-cloud-ops-agent/config.yaml > /dev/null <<'EOF'
 logging:
-  receivers:
-    # script 1 log
-    script1-logs:
-      type: files
-      include_paths:
-        - /var/log/script1.log
+	receivers:
+		# script 1 log
+		script1-logs:
+			type: files
+			include_paths:
+				- /var/log/script1.log
 
-    # script 2 log
-    script2-logs:
-      type: files
-      include_paths:
-        - /var/log/script2.log
+		# script 2 log
+		script2-logs:
+			type: files
+			include_paths:
+				- /var/log/script2.log
 
-  service:
-    pipelines:
-      default_pipeline:
-        receivers: [script1-logs, script2-logs]
+	service:
+		pipelines:
+			default_pipeline:
+				receivers: [script1-logs, script2-logs]
 EOF
 ```
 
@@ -152,12 +152,12 @@ sudo systemctl list-units 'google-cloud-ops-agent*'
 Expected (or similar):
 
 ```
-  UNIT                                                   LOAD   ACTIVE SUB     DESCRIPTION                           
-  google-cloud-ops-agent-diagnostics.service             loaded active running Google Cloud Ops Agent - Diagnostics
-  google-cloud-ops-agent-fluent-bit.service              loaded active running Google Cloud Ops Agent - Logging Agent
+	UNIT                                                   LOAD   ACTIVE SUB     DESCRIPTION                           
+	google-cloud-ops-agent-diagnostics.service             loaded active running Google Cloud Ops Agent - Diagnostics
+	google-cloud-ops-agent-fluent-bit.service              loaded active running Google Cloud Ops Agent - Logging Agent
 ● google-cloud-ops-agent-logging.service                 masked failed failed  google-cloud-ops-agent-logging.service
-  google-cloud-ops-agent-opentelemetry-collector.service loaded active running Google Cloud Ops Agent - Metrics Agent
-  google-cloud-ops-agent.service                         loaded active exited  Google Cloud Ops Agent
+	google-cloud-ops-agent-opentelemetry-collector.service loaded active running Google Cloud Ops Agent - Metrics Agent
+	google-cloud-ops-agent.service                         loaded active exited  Google Cloud Ops Agent
 ```
 
 - Modern Ops Agent (2.6.0+) versions use Fluent Bit for logging by default.
